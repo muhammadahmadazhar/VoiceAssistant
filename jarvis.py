@@ -119,6 +119,17 @@ def action():
             speak('according to wikipedia')
             speak(results)
 
+        elif 'it\'s my birthday today' in query:
+            print(" Wow! Wish you a very Happy Birthday")
+            speak(" Wow! Wish you a very Happy Birthday")
+
+        elif "where is" in query:
+            data = query.split(" ")
+            location = data[2]
+            speak("Hold on, I will show you where " + location + " is.")
+            os.system('cmd /k "start chrome https://www.google.nl/maps/place/"'+ location)
+            # os.system("start chrome https://www.google.nl/maps/place/" + location)
+
         elif 'the time' in query:
             strTime=datetime.now().strftime('%H:%M:%S')
             speak(f"Sir, the time is {strTime}")
